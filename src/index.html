@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ViCCEx - UKON</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-select.min.css">
+</head>
+
+<body class="text-center" data-gr-c-s-loaded="true">
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-light" style="background-color:  rgba(0,0,0,.125);">
+            <span class="navbar-brand mb-0 h1"> <strong>ViCCEx - Visual Chemical Contimation Explorer </strong> - <em> University of Konstanz </em> - Vast Challenge 2018 - Mini Challenge 2</span>
+            <button type="button" class="btn btn-default float-right" data-toggle="modal" data-target="#imprint-Modal">
+              Imprint & Datenschutzinformation
+</button>
+        </nav>
+
+        <div class="row" id="main-row">
+            <div class="col-md-10">
+                <div class="row">
+
+                    <div id="t-sne-vis-div" class="col-md-12">
+                        <div class="card bg-light border-secondary" rel="tooltip" data-placement="bottom" title="A TSNE projection showing the measured values grouped by each day">
+                            <h5 class="card-header">T-SNE</h5>
+                            <div id="t-sne-vis" class="card-body">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <button id="tsne-line-button" type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off" rel="tooltip" data-placement="bottom" title="Connect sequential time points in the T-SNE ">
+                                    Line
+                                </button>
+                                </div>
+                                <div class="col-md-10">
+                                    <em>
+                                    Legend:
+                                </em>
+                                    <span id="metadata-legend">
+
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card bg-light border-secondary">
+                            <h5 class="card-header" rel="tooltip" data-placement="top" title="Samples that are taken from the respective locations. The opacity is mapped to the number of chemicals measured.">Sampling strategy</h5>
+                            <div id="sampling-stragety-div" class="card-body">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button id="sampling-stragety-aggregate-buttons" type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off" rel="tooltip" data-placement="bottom" title="Aggregate the samling points to 50 points">
+                                        Aggregation
+                                    </button>
+                                    <div id="sampling-stragety-scale-buttons" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active" rel="tooltip" data-placement="bottom" title="Use a global scale to change the opacity of the sampling points">
+                                    <input type="radio" name="options" id="global-scale" autocomplete="off" checked> Global Scale
+                                  </label>
+                                        <label class="btn btn-secondary" rel="tooltip" data-placement="bottom" title="Use a local scale per location to change the opacity of the sampling points">
+                                    <input type="radio" name="options" id="local-scale" autocomplete="off"> Local Scale
+                                  </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                        </div>
+
+                        <div id="time-series-div" class="col-md-12" data-spy="scroll">
+                            <div class="card bg-light border-secondary">
+                                <h5 class="card-header">Time series</h5>
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="metadata-div" class="col-md-2">
+                    <!-- Metadata -->
+                    <div class="card border-secondary">
+                        <h5 class="card-header">Metadata</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12" rel="tooltip" data-placement="left" title="Choose which locations to visualize">
+                                    <strong>
+                                    Locations
+                                </strong>
+                                    <br /><br />
+                                    <select id="metadata-locations" class="selectpicker" multiple data-actions-box="true" data-live-search="true">
+                                </select>
+                                    <hr>
+                                </div>
+
+
+                                <div class="col-md-12" rel="tooltip" data-placement="left" title="Choose which chemical measurements to visualize">
+                                    <strong>
+                                    Measurements
+                                </strong>
+                                    <br /><br />
+                                    <select id="metadata-measurements" class="selectpicker" multiple data-actions-box="true" data-live-search="true">
+                                </select>
+                                    <hr>
+
+                                </div>
+
+                                <div class="col-md-12" rel="tooltip" data-placement="left" title="Abstract representation of the river network">
+                                    <strong>
+                                    River Network
+                                </strong>
+                                    <div id="metadata-river-network">
+
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-12" rel="tooltip" data-placement="left" title="Calculated statistics to find interesting locations and measurements">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" id="statistics-button" class="btn btn-secondary" data-toggle="modal" data-target="#statistics-modal">
+                              Statistics
+                            </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="statistics-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Extracted Statistics - </h5>
+                                                    <em>
+                                                    Click on a row of the table to display the measured values in a scatterplot
+                                                </em>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="table-responsive">
+                                                        <table id="statistics-table" class="table table-hover table-bordered table-striped">
+                                                            <thead class="thead-dark">
+                                                                <tr>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The chemical that waste measured">Chemical</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The location where the measurement was taken">Location</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The number of days on which measurements were taken">Taken Samples</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The mean of the measurement per location">Mean</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The median of the measurement per location">Median</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The maximum of the measurement per location">Maximum</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The minimum of the measurement per location">Minimum</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The Kurtosis of the measurement per location">Kurtosis</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The skewness of the measurement per location">Skewness</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The variance of the measurement per location">Variance</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The absolute energy which is the sum over the squared values">Abs Energy</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The mean over the absolute differences between subsequent time series">Mean Change</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The sample entropy of the time series">Sample Entropy</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The number of values in the time series that are higher than the mean">Samples Above Mean</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The number of values in the time series that are lower than the mean">Samples Below Mean</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The standard deviation ">Standard Deviation</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="The sum of all data points, that are present in the time series more than once">Sum of Reoccurring Data Points</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="Variable denoting if the variance of the time series is greater than its standard deviation">Variance &gt; Standard
+                                                                        Deviation</th>
+                                                                    <th scope="col" rel="tooltip" data-placement="bottom" title="Returns a factor which is one if all values in the time series occur only once, and below one if this is not the case.
+    # unique values / # values ">Samples
+                                                                        to Time Series Length</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- Add here the statistics  -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                </div>
+                                <div class="col-md-12" rel="tooltip" data-placement="left" title="Further additional information, which is usually displayed with a mouseover">
+                                    <strong>
+                                    Info
+                                </strong>
+                                    <div id="metadata-info">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="imprint-Modal" tabindex="-1" role="dialog" aria-labelledby="imprint-Modal" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Imprint & Datenschutzinformation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-md-12 text-left">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+<script src="jquery.min.js"></script>
+<script src="d3.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="bootstrap-select.min.js"></script>
+<script src="bundle.js"></script>
+
+</html>

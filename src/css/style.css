@@ -1,0 +1,66 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    /* margin-bottom: 60px; */
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: visible;
+}
+
+.axis {
+    stroke-width: 0.5px;
+    stroke: #888;
+    font: 10px avenir next, sans-serif;
+}
+
+.axis>path {
+    stroke: #888;
+}
+
+.zoom {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+}
+
+.timeseriesline {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+#metadata-river-network>svg:nth-child(1) {
+    border: 1px solid black;
+    stroke: #737373;
+    stroke-width: 2px;
+}
+
+.highlight {
+    border: 5px solid black;
+}
+
+.modal-lg {
+    max-width: 95%;
+}
+
+.blank-row {
+    height: 15px !important;
+    /* overwrites any other rules */
+    background-color: #FFFFFF;
+}
+
+.timeline {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}

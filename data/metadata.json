@@ -1,0 +1,284 @@
+{
+  "date": {
+    "min": "1998-01-11",
+    "max": "2016-12-31"
+  },
+  "locations": [
+    "Achara",
+    "Boonsri",
+    "Busarakhan",
+    "Chai",
+    "Decha",
+    "Kannika",
+    "Kohsoom",
+    "Sakda",
+    "Somchair",
+    "Tansanee"
+  ],
+  "locationsRelationships": {
+	 "nodes": [
+      {
+        "location": "Achara",
+        "x": 80,
+        "y": 60
+      },
+            {
+        "location": "Boonsri",
+        "x": 110,
+        "y": 30
+      },
+            {
+        "location": "Busarakhan",
+        "x": 160,
+        "y": 80
+      },
+            {
+        "location": "Chai",
+        "x": 120,
+        "y": 100
+      },
+            {
+        "location": "Decha",
+        "x": 20,
+        "y": 120
+      },
+            {
+        "location": "Kannika",
+        "x": 140,
+        "y": 150
+      },
+            {
+        "location": "Kohsoom",
+        "x": 150,
+        "y": 60
+      },
+            {
+        "location": "Sakda",
+        "x": 110,
+        "y": 180
+      },
+            {
+        "location": "Somchair",
+        "x": 60,
+        "y": 90
+      },
+            {
+        "location": "Tansanee",
+        "x": 60,
+        "y": 140
+      } 
+    ],     
+	"links": [
+      {
+        "source": [
+          60,
+          90
+        ],
+        "target": [
+          110,
+          180
+        ]
+      },
+      {
+        "source": [
+          80,
+          60
+        ],
+        "target": [
+          110,
+          180
+        ]
+      },
+      {
+        "source": [
+          110,
+          30
+        ],
+        "target": [
+          120,
+          100
+        ]
+      },
+      {
+        "source": [
+          150,
+          60
+        ],
+        "target": [
+          120,
+          100
+        ]
+      },
+      {
+        "source": [
+          120,
+          100
+        ],
+        "target": [
+          140,
+          150
+        ]
+      },
+      {
+        "source": [
+          160,
+          80
+        ],
+        "target": [
+          140,
+          150
+        ]
+      }
+    ]
+  },
+  "measureUnit": {
+    "1,2,3-Trichlorobenzene": "ug/l",
+    "1,2,4-Trichlorobenzene": "ug/l",
+    "Acenaphthene": "ug/l",
+    "Acenaphthylene": "ug/l",
+    "AGOC-3A": "ug/l",
+    "Alachlor": "ug/l",
+    "Aldrin": "ug/l",
+    "alpha-Hexachlorocyclohexane": "ug/l",
+    "Aluminium": "ug/l",
+    "Ammonium": "mg/l",
+    "Anionic active surfactants": "mg/l",
+    "Anthracene": "ug/l",
+    "AOX": "ug/l",
+    "Arsenic": "ug/l",
+    "Atrazine": "ug/l",
+    "Barium": "ug/l",
+    "Benzo(a)anthracene": "ug/l",
+    "Benzo(a)pyrene": "ug/l",
+    "Benzo(b)fluoranthene": "ug/l",
+    "Benzo(g,h,i)perylene": "ug/l",
+    "Benzo(k)fluoranthene": "ug/l",
+    "Berilium": "ug/l",
+    "beta-Hexaxchlorocyclohexane": "ug/l",
+    "Bicarbonates": "mg/l",
+    "Biochemical Oxygen": "mg/l",
+    "Boron": "ug/l",
+    "Cadmium": "ug/l",
+    "Calcium": "mg/l",
+    "Carbonates": "mg/l",
+    "Cesium": "ug/l",
+    "Chemical Oxygen Demand (Cr)": "mg/l",
+    "Chemical Oxygen Demand (Mn)": "mg/l",
+    "Chlorides": "mg/l",
+    "Chlorodinine": "ug/l",
+    "Chromium": "ug/l",
+    "Chrysene": "ug/l",
+    "Copper": "ug/l",
+    "Cyanides": "ug/l",
+    "Dieldrin": "ug/l",
+    "Dissolved organic carbon": "mg/l",
+    "Dissolved oxygen": "mg/l",
+    "Dissolved silicates": "mg/l",
+    "Endosulfan (alpha)": "ug/l",
+    "Endosulfan (beta)": "ug/l",
+    "Endrin": "ug/l",
+    "Fecal coliforms": "mg/l",
+    "Fecal streptococci": "mg/l",
+    "Fluoranthene": "ug/l",
+    "Fluorene": "ug/l",
+    "gamma-Hexachlorocyclohexane": "ug/l",
+    "Heptachlor": "ug/l",
+    "Heptachloroepoxide": "ug/l",
+    "Hexachlorobenzene": "ug/l",
+    "Indeno(1,2,3-c,d)pyrene": "ug/l",
+    "Inorganic nitrogen": "mg/l",
+    "Iron": "mg/l",
+    "Isodrin": "mg/l",
+    "Lead": "ug/l",
+    "Macrozoobenthos": "  ",
+    "Magnesium": "mg/l",
+    "Manganese": "mg/l",
+    "Mercury": "ug/l",
+    "Methoxychlor": "ug/l",
+    "Methylosmoline": "ug/l",
+    "Metolachlor": "ug/l",
+    "Naphthalene": "mg/l",
+    "Nickel": "ug/l",
+    "Nitrates": "mg/l",
+    "Nitrites": "mg/l",
+    "Organic nitrogen": "mg/l",
+    "Orthophosphate-phosphorus": "mg/l",
+    "Oxygen saturation": "mg/l",
+    "p,p-DDD": "ug/l",
+    "p,p-DDE": "ug/l",
+    "p,p-DDT": "ug/l",
+    "PAHs": "ug/l",
+    "PCB 101": "ug/l",
+    "PCB 118": "ug/l",
+    "PCB 138": "ug/l",
+    "PCB 153": "ug/l",
+    "PCB 180": "ug/l",
+    "PCB 28": "ug/l",
+    "PCB 52": "ug/l",
+    "Pentachlorobenzene": "ug/l",
+    "Petroleum hydrocarbons": "mg/l",
+    "Phenanthrene": "ug/l",
+    "Potassium": "mg/l",
+    "Pyrene": "ug/l",
+    "Selenium": "ug/l",
+    "Silica (SiO2)": "mg/l",
+    "Simazine": "ug/l",
+    "Sodium": "mg/l",
+    "Sulfides": "mg/l",
+    "Sulphates": "mg/l",
+    "Tetrachloromethane": "ug/l",
+    "Total coliforms": "mg/l",
+    "Total dissolved phosphorus": "mg/l",
+    "Total dissolved salts": "mg/l",
+    "Total extractable matter": "mg/l",
+    "Total hardness": "mg/l",
+    "Total nitrogen": "mg/l",
+    "Total organic carbon": "mg/l",
+    "Total phosphorus": "mg/l",
+    "Trifluralin": "ug/l",
+    "Water temperature": "C",
+    "Zinc": "ug/l"
+  },
+  "samplesTakenMinMax": {
+    "Somchair": {
+      "min": 3,
+      "max": 70
+    },
+    "Boonsri": {
+      "min": 3,
+      "max": 165
+    },
+    "Sakda": {
+      "min": 6,
+      "max": 163
+    },
+    "Tansanee": {
+      "min": 5,
+      "max": 37
+    },
+    "Kohsoom": {
+      "min": 3,
+      "max": 56
+    },
+    "Chai": {
+      "min": 1,
+      "max": 210
+    },
+    "Achara": {
+      "min": 1,
+      "max": 34
+    },
+    "Kannika": {
+      "min": 6,
+      "max": 163
+    },
+    "Busarakhan": {
+      "min": 3,
+      "max": 69
+    },
+    "Decha": {
+      "min": 5,
+      "max": 36
+    }
+  }
+}
